@@ -1,6 +1,8 @@
-# neglect slurm and store
+# neglect slurm, store, pdf figs and old notebooks
 *slurm*
 *store*
+*.pdf
+notebooks*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
