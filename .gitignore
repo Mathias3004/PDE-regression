@@ -1,3 +1,7 @@
+# neglect slurm and store
+*slurm*
+*store*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
