@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# number of nodes
+#SBATCH -N 1
+
+# partition to run on
+#SBATCH -p RM-shared
+
+# modules to load
+module load python
+
+# run command
+echo "Command-line input: ${1} ${2} ${3} ${4} ${5}"
+/opt/packages/anaconda3/bin/python datgen_boson.py ${1} ${2} ${3} ${4} ${5}

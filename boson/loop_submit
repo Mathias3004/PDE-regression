@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# max time for each run in loop
+t="12:00:00"
+
+# potential depth
+V=0.3
+
+# MPS bc
+bc="finite"
+
+# folder to save
+path_store="store"
+
+# command for each job to loop over with different params
+count=0
+
+# loop over N=10,20,...,150
+for ((N=10; N<=150; N+=10)) 
+do
+    # loop over U=0.,0.1,...,1.
+    for U in $(seq .21 .01 .5)
+    do
+        # submit corresponding job
+        sbatch --time=$t submit_job $N $U $V $bc $path_store
+        echo "sbatch --time=$t submit_job $N $U $V $bc $path_store"
+            
+        count=$((count+1))
+    done
+done
+
+echo "$count jobs submitted"
